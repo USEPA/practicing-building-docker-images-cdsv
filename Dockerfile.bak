@@ -1,7 +1,7 @@
 # The image is based off of the rocker base image, which you can learn about here:
 # https://rocker-project.org/
 # The image is based off of ubuntu, but then runs a few scripts to install R and R shiny
-FROM rocker/shiny:4.3.0
+FROM rocker/shiny:4.4.0
 
 # I added this label, though it doesn't do anything
 LABEL name=CBCS 
