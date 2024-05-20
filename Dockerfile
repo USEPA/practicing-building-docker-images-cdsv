@@ -45,7 +45,7 @@ COPY renv/activate.R renv/activate.R
 COPY renv/settings.json renv/settings.json
 # RUN Rscript -e 'install.packages("renv")'
 RUN Rscript -e 'install.packages("remotes")'
-RUN Rscript -e 'install_all_packages_in_lockfile.R'
+RUN Rscript -e './install_all_packages_in_lockfile.R'
 # RUN Rscript -e 'renv::restore()'
 
 # This part copies in the rest of the project
