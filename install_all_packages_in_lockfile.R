@@ -439,9 +439,6 @@ print(' ... done.')
 print('installing remotes')...
 remotes::install_version("remotes", version="2.5.0")
 print(' ... done.')
-print('installing renv')...
-remotes::install_version("renv", version="1.0.7")
-print(' ... done.')
 print('installing reprex')...
 remotes::install_version("reprex", version="2.1.0")
 print(' ... done.')
