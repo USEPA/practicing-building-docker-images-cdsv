@@ -11,7 +11,9 @@ let d = {"R": {"Version": "4.4.0", "Repositories": [{"Name": "CRAN", "URL": "htt
 let myOut = [];
 for (let i=0; i<Object.keys(d["Packages"]).length; i++)
 	{
+	myOut.push("print('installing " + Object.keys(d["Packages"])[i] + "')... ");
 	myOut.push('remotes::install_version("' + Object.keys(d["Packages"])[i] + '", version="' + d["Packages"][Object.keys(d["Packages"])[i]]["Version"] + '")'); 
+	myOut.push("print('     ... done.')")
 	}
 document.getElementById("demo").innerHTML = myOut.join("<br>"); 
 </script>
