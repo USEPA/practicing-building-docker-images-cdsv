@@ -4,7 +4,7 @@
 FROM rocker/shiny:4.3.0
 
 # I added this label, though it doesn't do anything
-LABEL name=CBCS
+LABEL name=CBCS 
 
 # This part is the part that installs the system packages, usually needed for use in compiling some R package.
 # I just added packages to this list as I got errors
