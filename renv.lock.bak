@@ -1,0 +1,28 @@
+{
+  "R": {
+    "Version": "4.3.0",
+    "Repositories": [
+      {
+        "Name": "CRAN",
+        "URL": "https://cran.case.edu"
+      }
+    ]
+  },
+  "Packages": {
+			  "MASS": {
+			  "Package": "MASS",
+			  "Version": "7.3-58.3",
+			  "Source": "Repository",
+			  "Repository": "CRAN",
+			  "Requirements": [
+				"R",
+				"grDevices",
+				"graphics",
+				"methods",
+				"stats",
+				"utils"
+			  ],
+			  "Hash": "9586b552d57f5516fe4d25398c1bacd6"
+			  }
+			}
+}
