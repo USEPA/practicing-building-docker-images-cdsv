@@ -35,7 +35,7 @@ WORKDIR /app
 # This one seemed to break some packages:
 # RUN echo "PKG_CPPFLAGS=-Wno-format-security" >> ~/.R/Makevars
 
-RUN pwd
+# RUN pwd
 #     # changed this part to not use renv (I'm experimenting)
 #     RUN Rscript -e 'install.packages("remotes")'
 #     RUN Rscript 'install_all_packages_in_lockfile.R'
