@@ -4,7 +4,7 @@
 FROM rocker/shiny:4.4.0
 
 # I added this label, though it doesn't do anything
-LABEL name=CBCS 
+LABEL name=ContDataSumViz
 
 # This part is the part that installs the system packages, usually needed for use in compiling some R package.
 # I just added packages to this list as I got errors
@@ -35,18 +35,9 @@ WORKDIR /app
 # This one seemed to break some packages:
 # RUN echo "PKG_CPPFLAGS=-Wno-format-security" >> ~/.R/Makevars
 
-# This is part copies in the renv dependency list
-# The reason this is copied in seperately is for caching. Docker if it sees the dependencies haven't changed doesn't have to spend
-# the time re-compiling everything
-COPY renv.lock renv.lock
-RUN mkdir -p renv
-COPY .Rprofile .Rprofile
-COPY renv/activate.R renv/activate.R
-COPY renv/settings.json renv/settings.json
-# RUN Rscript -e 'install.packages("renv")'
+# changed this part to not use renv (I'm experimenting)
 RUN Rscript -e 'install.packages("remotes")'
-RUN Rscript -e './install_all_packages_in_lockfile.R'
-# RUN Rscript -e 'renv::restore()'
+RUN Rscript -e 'install_all_packages_in_lockfile.R'
 
 # This part copies in the rest of the project
 COPY . /app
