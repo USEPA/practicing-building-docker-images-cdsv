@@ -37,7 +37,7 @@ WORKDIR /app
 
 # changed this part to not use renv (I'm experimenting)
 RUN Rscript -e 'install.packages("remotes")'
-RUN Rscript -e 'install_all_packages_in_lockfile.R'
+RUN Rscript 'install_all_packages_in_lockfile.R'
 
 # This part copies in the rest of the project
 COPY . /app
